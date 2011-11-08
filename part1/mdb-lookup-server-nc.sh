@@ -9,4 +9,4 @@ cat mypipe-$pid | nc -l $1 | /home/jae/cs3157-pub/bin/mdb-lookup-cs3157 > mypipe
 
 #once user connecting to our server's port hits ctrl-c, pipe exits loop
 #delete mypipe at this point manually
-rm mypipe
+rm mypipe-$pid
