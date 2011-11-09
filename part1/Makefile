@@ -12,7 +12,7 @@ CXX = g++
 # Let's leave a place holder for additional include directories
 # -I dir for searching the directory where .h files needed are located
 
-INCLUDES = -I  # ~/cs3157/lab3/part1
+INCLUDES = 
 
 # Compilation options:
 # -g for debugging info and -Wall enables all warnings
@@ -24,13 +24,13 @@ CXXFLAGS = -g -Wall $(INCLUDES)
 # -g for debugging info
 # -L dir for directory to look for library .a file
 
-LDFLAGS = -g #-L ~/cs3157/lab3/part1
+LDFLAGS = -g 
 
 
 # List the libraries you need to link with in LDLIBS
 # For example, use "-lm" for the math library
 #specify mylist library from part1 that we want to link with .o files
-LDLIBS = # -lmylist
+LDLIBS = 
 
 # The 1st target gets built when you type "make".
 # It's usually your executable.  ("main" in this case.)
@@ -58,7 +58,7 @@ mdb-lookup-server-nc-2: mdb-lookup-server-nc-2.o
 
 mdb-lookup-server-nc-2.o: mdb-lookup-server-nc-2.c  
 
-  
+
 mdb-lookup-server-nc-1: mdb-lookup-server-nc-1.o  
 
 mdb-lookup-server-nc-1.o: mdb-lookup-server-nc-1.c  
@@ -78,7 +78,7 @@ mdb-lookup-server-nc-1.o: mdb-lookup-server-nc-1.c
 
 .PHONY: clean
 clean:
-	rm -f *.o *~ a.out core mdb-lookup 
+	rm -f *.o *~ a.out core mdb-lookup-server-nc-2 
 
 # "all" target is useful if your Makefile builds multiple programs.
 # Here we'll have it first do "clean", and rebuild the main target.
