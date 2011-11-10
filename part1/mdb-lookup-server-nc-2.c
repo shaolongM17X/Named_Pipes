@@ -51,7 +51,7 @@ if(port[0]=='\n') {printf("port number: "); continue;}
     } else {
 	// parent process
 	
-	while((pid=waitpid((pid_t)-1, NULL, WNOHANG)) != 0)
+	while(((pid=waitpid((pid_t)-1, NULL, WNOHANG)) != -1) && (pid!= 0))
 	{
 	fprintf(stderr, "[pid=%d] ", (int)pid);
 	fprintf(stderr, "mdb-lookup-server terminated\n");
