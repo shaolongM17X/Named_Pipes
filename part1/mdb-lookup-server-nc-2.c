@@ -50,15 +50,21 @@ if(port[0]=='\n') {printf("port number: "); continue;}
 	die("execl failed");
     } else {
 	// parent process
+	
+	while((pid=waitpid((pid_t)-1, NULL, WNOHANG)) != 0)
+	{
+	fprintf(stderr, "[pid=%d] ", (int)pid);
+	fprintf(stderr, "mdb-lookup-server terminated\n");
+	}	
+	
 	if ((pid=waitpid((pid_t)-1, NULL, WNOHANG)) == -1)
 		
 	    die("waitpid failed"); 
+	
 	if(pid==0){sleep(1); printf("port number: "); memset(port,'0',6); continue;} //if no child immediately available restart loop
 	
 	//o/w pid == value and thus one of the child processes has changed status, print them below
 	
-	fprintf(stderr, "[pid=%d] ", (int)pid);
-	fprintf(stderr, "mdb-lookup-server terminated\n");
     }
 
 sleep(1); 
