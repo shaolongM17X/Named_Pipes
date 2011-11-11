@@ -4,7 +4,9 @@ This file should contain:
   - jt2514
   - 5
 
-
+We built a named pipe using mkfifo shell command and created a program that created parallel server processes
+using netcat that would access our mdb-lookup database and that we could in turn connect to remotely. The
+program is fully functional without any issues to report. 
 
 
 
