@@ -3,7 +3,7 @@
  * mdb-lookup-server-nc-2.c
  * create multiple instances of mdb-lookup-server using netcat and system calls
  */
-
+#include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/wait.h>
