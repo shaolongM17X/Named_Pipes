@@ -1,6 +1,7 @@
 
 /*
- * mdb-lookup-server-nc-1.c
+ * mdb-lookup-server-nc-2.c
+ * create multiple instances of mdb-lookup-server using netcat and system calls
  */
 
 #include <stdio.h>
