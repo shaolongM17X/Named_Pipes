@@ -27,7 +27,19 @@ while(fgets(port,sizeof(port),stdin)!=NULL)  //read port number from stdin. newl
 //might need to remove newline char from port
 
 //hitting enter (newline) should prompt user again
-if(port[0]=='\n') {printf("port number: "); continue;}
+
+pid_t mypid = 0;
+
+if(port[0]=='\n') 
+
+{printf("port number: ");
+	while(((mypid=waitpid((pid_t)-1, NULL, WNOHANG)) != -1) && (mypid!= 0))
+	{
+	fprintf(stderr, "[pid=%d] ", (int)mypid);
+	fprintf(stderr, "mdb-lookup-server terminated\n");
+	}	
+       
+	continue;}
 
 /*unnecessary since we are using port number from stdin
     if (argc != 2) {
